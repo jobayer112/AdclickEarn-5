@@ -74,38 +74,29 @@
 
     <!-- Welcome Modal -->
     <div id="welcome-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[60] hidden p-4">
-        <div class="bg-gradient-to-b from-slate-900 to-slate-800 text-white rounded-2xl w-full max-w-sm p-6 relative popup-anim shadow-2xl border border-slate-700">
-            <button onclick="closeWelcomeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-white">
-                <i data-lucide="x" class="w-6 h-6"></i>
+        <div class="bg-gradient-to-b from-slate-900 to-slate-800 text-white rounded-2xl w-full max-w-sm p-4 relative popup-anim shadow-2xl border border-slate-700">
+            <button onclick="closeWelcomeModal()" class="absolute top-3 right-3 text-gray-400 hover:text-white">
+                <i data-lucide="x" class="w-5 h-5"></i>
             </button>
-            <div class="text-center mb-6">
-                <h2 class="text-2xl font-bold gradient-text">Welcome to AdClickEarn! 💸</h2>
+            <div class="text-center mb-4">
+                <h2 class="text-xl font-bold gradient-text">Welcome to AdClickEarn! 💸</h2>
             </div>
-            <div class="space-y-4 text-sm font-medium leading-relaxed text-center">
-                <p class="text-gray-300">The Best App for Earning Money by Watching Ads! 💸</p>
-                <p class="text-gray-300">Earn $5+ daily by using your smartphone. Turn your spare time into income!</p>
-                <div class="space-y-3 text-left bg-slate-800/50 p-4 rounded-lg border border-slate-700">
-                    <p class="flex items-center gap-2 text-green-400"><i data-lucide="check-circle" class="w-4 h-4"></i> <span>20 visits per website, total 60 visits daily</span></p>
-                    <p class="flex items-center gap-2 text-green-400"><i data-lucide="users" class="w-4 h-4"></i> <span>Referral bonus: $1 for each friend</span></p>
-                    <p class="flex items-center gap-2 text-green-400"><i data-lucide="trending-up" class="w-4 h-4"></i> <span>Unlimited earning opportunities</span></p>
-                </div>
-                <div class="border-t border-slate-700 pt-4">
-                    <p class="text-lg font-bold gradient-text">Share with friends and earn more!</p>
-                    <div class="mt-2 p-2 bg-slate-800 rounded-lg">
-                        <p class="text-xs text-gray-300 mb-1">Share this message:</p>
-                        <p class="text-sm text-blue-300 font-medium">Best Money Making App - AdClickEarn! 💸<br>
-                        Earn $5+ daily by watching ads! Unlimited earning opportunities.<br>
-                        Join now: https://t.me/AdClickEarnbd_bot</p>
-                        <button onclick="copyWelcomeMessage()" class="mt-2 text-xs bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded">Copy Message</button>
-                    </div>
+            <div class="space-y-3 text-sm text-center">
+                <p class="text-gray-300">Earn money by watching ads and visiting websites. Get started now!</p>
+                <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 text-left">
+                    <p class="text-xs text-gray-300 mb-1">Share this message to earn more:</p>
+                    <p class="text-xs text-blue-300 font-medium">Best Money Making App - AdClickEarn! 💸<br>
+                    Earn $5+ daily by watching ads!<br>
+                    Join now: https://t.me/AdClickEarnbd_bot</p>
+                    <button onclick="copyWelcomeMessage()" class="mt-2 text-xs bg-blue-600 hover:bg-blue-700 px-3 py-1 rounded">Copy Message</button>
                 </div>
             </div>
-            <button onclick="closeWelcomeModal()" class="w-full mt-6 btn-accent font-bold py-3 rounded-xl transition-all text-lg">Get Started</button>
+            <button onclick="closeWelcomeModal()" class="w-full mt-4 btn-accent font-bold py-2 rounded-xl transition-all text-sm">Get Started</button>
         </div>
     </div>
 
     <!-- Auth Section -->
-    <div id="auth-section" class="min-h-screen p-6 flex-col justify-center main-page">
+    <div id="auth-section" class="min-h-screen p-6 flex-col justify-center main-page active">
         <div class="text-center mb-8">
             <h1 class="text-4xl font-bold mb-2 gradient-text">AdClickEarn</h1>
             <p class="text-gray-400 mb-8">Earn Money by Watching Ads</p>
@@ -177,7 +168,7 @@
                 <!-- Daily Tasks Section -->
                 <section>
                     <div class="flex justify-between items-center mb-4">
-                        <h2 class="text-lg font-semibold">Daily Website Visits (20 per site × 3 sites = 60 total)</h2>
+                        <h2 class="text-lg font-semibold">Daily Website Visits</h2>
                         <div class="text-sm bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full">
                             <span id="website-visits-left">60</span> remaining
                         </div>
@@ -186,8 +177,7 @@
                     <div class="space-y-3">
                         <!-- Website 1 Visits -->
                         <div class="bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-3 rounded-lg border border-blue-800/50">
-                            <h3 class="text-sm font-semibold text-blue-300 mb-2">Website 1 Visits (50 Coins Each) - <span id="web1-count">0</span>/20</h3>
-                            <p class="text-xs text-gray-400 mb-3">Visit websites for 30 seconds to earn 50 coins per visit. 20 visits per site!</p>
+                            <h3 class="text-sm font-semibold text-blue-300 mb-2">Website 1 (50 Coins) - <span id="web1-count">0</span>/20</h3>
                             
                             <div class="task-btn-grid" id="website1-tasks-grid">
                                 <!-- Dynamic website 1 visit buttons will be generated here -->
@@ -196,8 +186,7 @@
 
                         <!-- Website 2 Visits -->
                         <div class="bg-gradient-to-r from-green-900/30 to-emerald-900/30 p-3 rounded-lg border border-green-800/50">
-                            <h3 class="text-sm font-semibold text-green-300 mb-2">Website 2 Visits (50 Coins Each) - <span id="web2-count">0</span>/20</h3>
-                            <p class="text-xs text-gray-400 mb-3">Visit websites for 30 seconds to earn 50 coins per visit. 20 visits per site!</p>
+                            <h3 class="text-sm font-semibold text-green-300 mb-2">Website 2 (50 Coins) - <span id="web2-count">0</span>/20</h3>
                             
                             <div class="task-btn-grid" id="website2-tasks-grid">
                                 <!-- Dynamic website 2 visit buttons will be generated here -->
@@ -206,8 +195,7 @@
 
                         <!-- Website 3 Visits -->
                         <div class="bg-gradient-to-r from-purple-900/30 to-pink-900/30 p-3 rounded-lg border border-purple-800/50">
-                            <h3 class="text-sm font-semibold text-purple-300 mb-2">Website 3 Visits (50 Coins Each) - <span id="web3-count">0</span>/20</h3>
-                            <p class="text-xs text-gray-400 mb-3">Visit websites for 30 seconds to earn 50 coins per visit. 20 visits per site!</p>
+                            <h3 class="text-sm font-semibold text-purple-300 mb-2">Website 3 (50 Coins) - <span id="web3-count">0</span>/20</h3>
                             
                             <div class="task-btn-grid" id="website3-tasks-grid">
                                 <!-- Dynamic website 3 visit buttons will be generated here -->
@@ -217,7 +205,6 @@
                         <!-- Ad Rewards -->
                         <div class="bg-gradient-to-r from-orange-900/30 to-red-900/30 p-3 rounded-lg border border-orange-800/50">
                             <h3 class="text-sm font-semibold text-orange-300 mb-2">Watch Ads & Earn More</h3>
-                            <p class="text-xs text-gray-400 mb-3">Watch ads and get instant rewards</p>
                             
                             <div class="space-y-2">
                                 <div class="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 p-3 rounded-lg flex items-center justify-between">
@@ -359,7 +346,6 @@
                 <!-- Enter Referral Code -->
                 <div class="card-bg p-4 rounded-xl">
                     <h3 class="font-semibold mb-3">Have a Referral Code?</h3>
-                    <p class="text-sm text-gray-400 mb-3">Enter code to get $1 bonus</p>
                     <input id="enter-referral-code" type="text" placeholder="Enter friend's code here" class="w-full p-3 rounded-lg input-field mb-3">
                     <button id="apply-referral-btn" class="w-full p-3 rounded-lg btn-outline-accent">Apply Code</button>
                 </div>
@@ -367,7 +353,7 @@
                 <!-- Referral Message -->
                 <div class="bg-gradient-to-r from-blue-900/30 to-purple-900/30 p-4 rounded-xl border border-blue-800/50">
                     <p class="text-sm mb-2 font-semibold">Best Money Making App - AdClickEarn! 💸</p>
-                    <p class="text-xs text-gray-300 mb-3">Earn $5+ daily by watching ads! Unlimited earning opportunities.</p>
+                    <p class="text-xs text-gray-300">Earn $5+ daily by watching ads!</p>
                     <p class="text-xs text-gray-400">Join now: https://t.me/AdClickEarnbd_bot</p>
                 </div>
             </div>
